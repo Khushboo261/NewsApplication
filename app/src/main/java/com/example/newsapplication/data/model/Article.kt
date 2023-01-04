@@ -1,9 +1,15 @@
 package com.example.newsapplication.data.model
 
 
+import androidx.room.PrimaryKey
+import androidx.room.vo.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class Article(
+
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null,
+
     @SerializedName("author")
     val author: String,
     @SerializedName("content")
@@ -20,4 +26,4 @@ data class Article(
     val url: String,
     @SerializedName("urlToImage")
     val urlToImage: String
-):java.io.Serializable
+):java.io.Serial
