@@ -2,6 +2,7 @@ package com.example.newsapplication.data.model
 
 
 import androidx.room.PrimaryKey
+import androidx.room.vo.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class Article(
@@ -25,12 +26,4 @@ data class Article(
     val url: String,
     @SerializedName("urlToImage")
     val urlToImage: String
-):java.io.Serializable{
-    override fun hashCode(): Int {
-        var result = id.hashCode()
-        if(url.isNullOrEmpty()){
-            result = 31 * result + url.hashCode()
-        }
-        return result
-    }
-}
+):java.io.Serial

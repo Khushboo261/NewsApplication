@@ -48,6 +48,25 @@ class NewsFragment : Fragment() {
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
                 putSerializable("selected_article", it)
+                /*val itValue = it.id
+                val sourceId = it.source?.id
+                if(itValue!=null) {
+                    if(sourceId !=null) {
+                        putSerializable("selected_article", it)
+                    }else {
+                        it.source?.id = "NEWS"
+                        putSerializable("selected_article", it)
+                    }
+                } else{
+                    if(sourceId !=null) {
+                        it.id = 0
+                        putSerializable("selected_article", it)
+                    }else {
+                        it.id = 0
+                        it.source?.id = "NEWS"
+                        putSerializable("selected_article", it)
+                    }
+                }*/
             }
             Log.i("Articles List", "Bundle: ${bundle.toString()}")
             findNavController().navigate(
